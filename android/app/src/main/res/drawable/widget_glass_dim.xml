@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Glass card, dim mode. See widget_glass_light.xml for why this is a
+     translucent fill rather than a real backdrop blur. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <corners android:radius="20dp" />
+
+    <gradient
+        android:type="linear"
+        android:angle="135"
+        android:startColor="#24FFFFFF"
+        android:endColor="#12FFFFFF" />
+
+    <stroke
+        android:width="1dp"
+        android:color="#2EFFFFFF" />
+
+</shape>

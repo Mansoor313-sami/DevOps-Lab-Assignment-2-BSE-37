@@ -1,0 +1,49 @@
+{
+  "license": "0BSD",
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "build:aab": "eas build --platform android --profile production",
+    "build:apk": "eas build --platform android --profile preview",
+    "build:dev-apk": "eas build --platform android --profile development"
+  },
+  "expo": {
+    "doctor": {
+      "appConfigFieldsNotSyncedCheck": {
+        "enabled": false
+      }
+    }
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^15.0.3",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-native-community/datetimepicker": "9.1.0",
+    "expo": "~56.0.19",
+    "expo-clipboard": "~56.0.4",
+    "expo-dev-client": "~56.0.24",
+    "expo-device": "~56.0.4",
+    "expo-font": "~56.0.7",
+    "expo-haptics": "~56.0.3",
+    "expo-image-picker": "~56.0.23",
+    "expo-local-authentication": "~56.0.5",
+    "expo-notifications": "~56.0.23",
+    "expo-print": "~56.0.4",
+    "expo-secure-store": "~56.0.4",
+    "expo-sharing": "~56.0.24",
+    "expo-splash-screen": "~56.0.14",
+    "expo-sqlite": "~56.0.5",
+    "expo-status-bar": "~56.0.4",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.85.3",
+    "react-native-calendars": "*",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-web": "^0.21.0"
+  },
+  "private": true,
+  "name": "QuizMate",
+  "version": "1.0.6"
+}

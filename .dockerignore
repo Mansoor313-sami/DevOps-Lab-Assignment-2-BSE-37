@@ -1,0 +1,16 @@
+node_modules
+.expo
+.git
+.gitignore
+android
+ios
+*.log
+.env
+.env.*
+*.pem
+*.key
+*.jks
+*.keystore
+google-services.json
+GoogleService-Info.plist
+.asset-backups

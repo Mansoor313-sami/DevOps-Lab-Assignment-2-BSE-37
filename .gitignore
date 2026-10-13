@@ -1,0 +1,74 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# local env files
+.env
+.env.*
+!.env.example
+.env*.local
+*.keystore
+google-services.json
+GoogleService-Info.plist
+
+# typescript
+*.tsbuildinfo
+
+# generated native folders
+/ios
+
+# Android is intentionally versioned. QuizMate's Glance home-screen
+# widget is implemented in native Kotlin/resources under this folder;
+# ignoring it would omit the widget from local and cloud APK builds.
+#
+# Its Gradle OUTPUT, however, must never be committed. EAS uploads
+# whatever git tracks, so a build directory produced on Windows travels
+# to the Linux builder carrying absolute paths like
+# "D:/My Apps/QuizMate/node_modules/..." baked into
+# build/generated/autolinking/autolinking.json. Gradle then joins those
+# onto its own root and fails with "Configuring project ':<module>'
+# without an existing directory is not allowed".
+/android/build/
+/android/app/build/
+/android/.gradle/
+/android/.cxx/
+/android/app/.cxx/
+/android/.idea/
+/android/local.properties
+*.iml
+*.hprof
+
+# Bundled JS emitted into the native project by a release build.
+/android/app/src/main/assets/index.android.bundle
+/android/app/src/main/assets/index.android.bundle.map
+
+# original uncompressed art (kept out of the bundle)
+.asset-backups/

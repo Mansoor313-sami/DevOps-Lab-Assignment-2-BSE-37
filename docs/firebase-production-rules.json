@@ -1,0 +1,24 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid == $uid",
+        ".write": "auth != null && auth.uid == $uid"
+      }
+    },
+    "regNoIndex": {
+      ".read": true,
+      "$regNo": {
+        ".write": "auth != null"
+      }
+    },
+    "emailIndex": {
+      ".read": true,
+      "$email": {
+        ".write": "auth != null"
+      }
+    },
+    ".read": false,
+    ".write": false
+  }
+}

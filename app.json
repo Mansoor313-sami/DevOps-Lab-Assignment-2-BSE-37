@@ -1,0 +1,85 @@
+{
+  "expo": {
+    "name": "QuizMate",
+    "slug": "quizmate",
+    "version": "1.0.6",
+    "description": "QuizMate helps students manage subjects, tasks, attendance, class schedules, date sheets, and study reminders.",
+    "orientation": "portrait",
+    "icon": "./assets/logo/icon.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#F3F0FF",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.sami.quizmate",
+      "versionCode": 11,
+      "softwareKeyboardLayoutMode": "pan",
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logo/icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "permissions": [
+        "INTERNET",
+        "VIBRATE",
+        "POST_NOTIFICATIONS",
+        "SCHEDULE_EXACT_ALARM"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/logo/icon.png"
+    },
+    "plugins": [
+      "expo-font",
+      "./plugins/withQuizMateWidget",
+      [
+        "expo-notifications",
+        {
+          "sounds": [
+            "./assets/sounds/quizmate_calm.wav",
+            "./assets/sounds/quizmate_focus.wav",
+            "./assets/sounds/quizmate_urgent.wav"
+          ]
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "QuizMate needs photo access so you can choose a profile picture."
+        }
+      ],
+      "@react-native-community/datetimepicker",
+      "expo-status-bar",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/logo/splash.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#F3F0FF"
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow QuizMate to use Face ID to unlock the app."
+        }
+      ],
+      "expo-secure-store",
+      "expo-sharing",
+      "expo-sqlite"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "77dbf85b-ffcb-49f3-9dbc-19463e2d9b56"
+      }
+    },
+    "owner": "mansoordevelopings-team"
+  }
+}
