@@ -27,7 +27,12 @@ The Lab 1 `Dockerfile` is kept at the project root. Both GitHub Actions workflow
 - `.github/workflows/docker-commands.yml` uses Docker CLI commands.
 - `.github/workflows/docker-actions.yml` uses Docker's GitHub Actions.
 
-Each workflow builds the image without credentials. To enable publishing to Docker Hub, add repository Actions secrets named `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` in **Settings → Secrets and variables → Actions**. Use a Docker Hub access token for `DOCKERHUB_TOKEN`; never commit or paste the token into source files. Publishing runs only on `main` when both secrets are present. The image name is `<Docker Hub username>/quizmate-bse-37`.
+Both workflows build the same source revision and Dockerfile, then publish separate images to Docker Hub:
+
+- `<Docker Hub username>/bse_37_commands:latest`
+- `<Docker Hub username>/bse_37_actions:latest`
+
+Add repository Actions secrets named `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` in **Settings → Secrets and variables → Actions**. Use a Docker Hub access token with Repo Read & Write permission for `DOCKERHUB_TOKEN`; never commit or paste the token into source files.
 
 Run the Docker image locally with:
 

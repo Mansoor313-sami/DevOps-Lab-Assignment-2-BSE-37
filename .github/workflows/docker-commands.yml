@@ -18,20 +18,11 @@ jobs:
       - name: Check out QuizMate source
         uses: actions/checkout@v4
 
-      - name: Build the Lab 1 Dockerfile
-        run: docker build -t quizmate-bse-37:ci .
-
-      - name: Verify the image exists
-        run: docker image inspect quizmate-bse-37:ci
-
       - name: Log in to Docker Hub
-        if: ${{ github.ref == 'refs/heads/main' && env.DOCKERHUB_USERNAME != '' && env.DOCKERHUB_TOKEN != '' }}
         run: printf '%s' "$DOCKERHUB_TOKEN" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
 
-      - name: Tag and push the image
-        if: ${{ github.ref == 'refs/heads/main' && env.DOCKERHUB_USERNAME != '' && env.DOCKERHUB_TOKEN != '' }}
-        run: |
-          docker tag quizmate-bse-37:ci "$DOCKERHUB_USERNAME/quizmate-bse-37:latest"
-          docker tag quizmate-bse-37:ci "$DOCKERHUB_USERNAME/quizmate-bse-37:$GITHUB_SHA"
-          docker push "$DOCKERHUB_USERNAME/quizmate-bse-37:latest"
-          docker push "$DOCKERHUB_USERNAME/quizmate-bse-37:$GITHUB_SHA"
+      - name: Build image with Docker commands
+        run: docker build -f Dockerfile -t "$DOCKERHUB_USERNAME/bse_37_commands:latest" .
+
+      - name: Push image with Docker commands
+        run: docker push "$DOCKERHUB_USERNAME/bse_37_commands:latest"
